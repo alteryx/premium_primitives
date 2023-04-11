@@ -1,23 +1,14 @@
 # Premium Primitives
 
 <p align="center">
-    <a href="https://github.com/alteryx/premium_primitives/actions?query=branch%3Amain+workflow%3ATests" target="_blank">
-        <img src="https://github.com/alteryx/premium_primitives/workflows/Tests/badge.svg?branch=main" alt="Tests" />
+    <a href="https://github.com/alteryx/premium_primitives/actions/workflows/unit_tests_with_latest_deps.yaml?query=branch%3Amain" target="_blank">
+        <img src="https://github.com/alteryx/premium_primitives/actions/workflows/unit_tests_with_latest_deps.yaml/badge.svg?branch=main" alt="Tests" />
     </a>
     <a href="https://codecov.io/gh/alteryx/premium_primitives">
         <img src="https://codecov.io/gh/alteryx/premium_primitives/branch/main/graph/badge.svg"/>
     </a>
-    <a href="https://badge.fury.io/py/premium_primitives" target="_blank">
-        <img src="https://badge.fury.io/py/premium_primitives.svg?maxAge=2592000" alt="PyPI Version" />
-    </a>
-    <a href="https://anaconda.org/conda-forge/premium_primitives" target="_blank">
-        <img src="https://anaconda.org/conda-forge/premium_primitives/badges/version.svg" alt="Anaconda Version" />
-    </a>
     <a href="https://stackoverflow.com/questions/tagged/featuretools" target="_blank">
         <img src="http://img.shields.io/badge/questions-on_stackoverflow-blue.svg" alt="StackOverflow" />
-    </a>
-    <a href="https://pepy.tech/project/premium_primitives" target="_blank">
-        <img src="https://pepy.tech/badge/premium_primitives/month" alt="PyPI Downloads" />
     </a>
 </p>
 <hr>

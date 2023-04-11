@@ -2,7 +2,6 @@
 docs/source/generated/
 docs/source/getting_started/graphs
 venv/
-data/
 installed/
 output.csv
 htmlcov/
