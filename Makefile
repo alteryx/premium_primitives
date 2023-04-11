@@ -17,7 +17,7 @@ lint-fix:
 	black . --config=./pyproject.toml
 	ruff . --fix --config=./pyproject.toml
 
-PYTEST = python -m pytest -n auto -s -vv --doctest-glob='premium_primitives/*'
+PYTEST = python -m pytest -n auto -s -vv
 
 .PHONY: test
 test:

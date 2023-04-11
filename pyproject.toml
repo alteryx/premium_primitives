@@ -51,29 +51,39 @@ dev = [
     "pre-commit >= 2.20.0",
 ]
 
+[project.urls]
+"Documentation" = "https://featuretools.alteryx.com"
+"Source Code"= "https://github.com/alteryx/premium_primitives/"
+"Changes" = "https://github.com/alteryx/premium_primitives/blob/main/release_notes.rst"
+"Issue Tracker" = "https://github.com/alteryx/premium_primitives/issues"
+"Twitter" = "https://twitter.com/alteryxoss"
+"Chat" = "https://join.slack.com/t/alteryx-oss/shared_invite/zt-182tyvuxv-NzIn6eiCEf8TBziuKp0bNA"
+
 [project.entry-points."featuretools_primitives"]
 premium_primitives = "premium_primitives"
 
 [tool.setuptools]
 include-package-data = true
+license-files = ["LICENSE"]
 
 [tool.setuptools.packages.find]
 namespaces = true
 
 [tool.setuptools.package-data]
-"*" = [
-    "*.txt",
+"premium_primitives" = [
     "README.md",
 ]
 "premium_primitives.data" = [
     "*.csv",
     "*.txt",
 ]
+
 [tool.setuptools.exclude-package-data]
 "*" = [
     "* __pycache__",
     "*.py[co]",
-    "/docs/*"
+    "unpacked_sdist",
+    "dist",
 ]
 
 [tool.setuptools.dynamic]
@@ -131,7 +141,7 @@ exclude_lines =[
 
 [build-system]
 requires = [
-    "setuptools >= 61.0.0",
+    "setuptools >= 64.0.0",
     "wheel"
 ]
 build-backend = "setuptools.build_meta"

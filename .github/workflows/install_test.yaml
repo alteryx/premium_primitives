@@ -37,11 +37,11 @@ jobs:
       - name: Install complete version from sdist (not using cache)
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
-          python -m pip install "unpacked_sdist/[complete]"
+          python -m pip install "unpacked_sdist/"
       - name: Install complete version from sdist (using cache)
         if: steps.cache.outputs.cache-hit == 'true'
         run: |
-          python -m pip install "unpacked_sdist/[complete]" --no-deps
+          python -m pip install "unpacked_sdist/" --no-deps
       - name: Check featuretools and premium_primitives pkgs importable
         run: |
           python -c "import premium_primitives; print(premium_primitives.__version__)"
@@ -51,7 +51,7 @@ jobs:
           python -c "from featuretools.primitives import list_primitives; assert len(list_primitives()) > 180"
       - name: Check extra requires
         run: |
-          python -m pip install unpacked_sdist/[dev,test]
+          python -m pip install "unpacked_sdist/[dev,test]"
       - name: Check package conflicts
         run: |
           python -m pip check
