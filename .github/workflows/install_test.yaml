@@ -1,0 +1,57 @@
+name: Install Test
+on:
+  pull_request:
+    types: [opened, synchronize]
+  push:
+    branches:
+      - main
+jobs:
+  install_pp_complete:
+    name: ${{ matrix.os }} - ${{ matrix.python_version }} install premium primitives
+    strategy:
+      fail-fast: false
+      matrix:
+        python_version: ["3.8", "3.9", "3.10"]
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+      - name: Set up python ${{ matrix.python_version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python_version }}
+          cache: 'pip'
+          cache-dependency-path: 'pyproject.toml'
+      - uses: actions/cache@v3
+        id: cache
+        with:
+          path: ${{ env.pythonLocation }}
+          key: ${{ matrix.os- }}-${{ matrix.python_version }}-install-${{ env.pythonLocation }}-${{ hashFiles('**/pyproject.toml') }}-v01
+      - name: Build package
+        run: |
+          make package
+      - name: Install complete version from sdist (not using cache)
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          python -m pip install "unpacked_sdist/[complete]"
+      - name: Install complete version from sdist (using cache)
+        if: steps.cache.outputs.cache-hit == 'true'
+        run: |
+          python -m pip install "unpacked_sdist/[complete]" --no-deps
+      - name: Check featuretools and premium_primitives pkgs importable
+        run: |
+          python -c "import premium_primitives; print(premium_primitives.__version__)"
+          python -c "from premium_primitives import PostalCodeToHouseholdIncome"
+          python -c "import featuretools; print(featuretools.__version__)"
+          python -c "from featuretools.primitives import PostalCodeToHouseholdIncome"
+          python -c "from featuretools.primitives import list_primitives; assert len(list_primitives()) > 180"
+      - name: Check extra requires
+        run: |
+          python -m pip install unpacked_sdist/[dev,test]
+      - name: Check package conflicts
+        run: |
+          python -m pip check
