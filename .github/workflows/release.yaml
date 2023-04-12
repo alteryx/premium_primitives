@@ -1,0 +1,19 @@
+name: Release
+on:
+  release:
+    types: [published]
+jobs:
+  pypi:
+    name: PyPI Release
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Remove docs before release
+      run: rm -rf docs/
+    - name: PyPI Upload
+      uses: FeatureLabs/gh-action-pypi-upload@v2
+      env:
+        PYPI_USERNAME: ${{ secrets.PYPI_USERNAME }}
+        PYPI_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+        TEST_PYPI_USERNAME: ${{ secrets.TEST_PYPI_USERNAME }}
+        TEST_PYPI_PASSWORD: ${{ secrets.TEST_PYPI_PASSWORD }}
