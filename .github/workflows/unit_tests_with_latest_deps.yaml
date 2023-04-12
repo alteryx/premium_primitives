@@ -45,7 +45,7 @@ jobs:
       - name: Run unit tests
         run: |
           cd unpacked_sdist
-          python -m pytest -n auto -s -vv ${{ env.coverage_args }}
+          python -m pytest -n auto -s -vv premium_primitives/ ${{ env.coverage_args }}
       - if: ${{ matrix.python_version == 3.8 && matrix.featuretools_version == 'release'}}
         name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
