@@ -4,8 +4,8 @@
     <a href="https://github.com/alteryx/premium_primitives/actions/workflows/unit_tests_with_latest_deps.yaml?query=branch%3Amain" target="_blank">
         <img src="https://github.com/alteryx/premium_primitives/actions/workflows/unit_tests_with_latest_deps.yaml/badge.svg?branch=main" alt="Tests" />
     </a>
-    <a href="https://codecov.io/gh/alteryx/premium_primitives">
-        <img src="https://codecov.io/gh/alteryx/premium_primitives/branch/main/graph/badge.svg"/>
+    <a href="https://codecov.io/gh/alteryx/premium_primitives" >
+      <img src="https://codecov.io/gh/alteryx/premium_primitives/branch/main/graph/badge.svg?token=L9KINVJ31P"/>
     </a>
     <a href="https://stackoverflow.com/questions/tagged/featuretools" target="_blank">
         <img src="http://img.shields.io/badge/questions-on_stackoverflow-blue.svg" alt="StackOverflow" />
