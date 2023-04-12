@@ -48,6 +48,8 @@ jobs:
           python -c "from premium_primitives import PostalCodeToHouseholdIncome"
           python -c "import featuretools; print(featuretools.__version__)"
           python -c "from featuretools.primitives import PostalCodeToHouseholdIncome"
+          python -c "from featuretools.primitives import PostalCodeToLatLong"
+          python -c "from featuretools.primitives import LatLongToCity"
           python -c "from featuretools.primitives import list_primitives; assert len(list_primitives()) > 180"
       - name: Check extra requires
         run: |

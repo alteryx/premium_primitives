@@ -1,0 +1,54 @@
+name: Minimum Dependency Checker
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'pyproject.toml'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+      - name: Run min dep generator - test reqs
+        id: min_dep_gen_test
+        uses: alteryx/minimum-dependency-generator@v3
+        with:
+          paths: 'pyproject.toml'
+          options: 'dependencies'
+          extras_require: 'test'
+          output_filepath: premium_primitives/tests/requirement_files/minimum_test_requirements.txt
+      - name: Run min dep generator - core reqs
+        id: min_dep_gen_core
+        uses: alteryx/minimum-dependency-generator@v3
+        with:
+          paths: 'pyproject.toml'
+          options: 'dependencies'
+          output_filepath: premium_primitives/tests/requirement_files/minimum_core_requirements.txt
+      - name: Run min dep generator - spark
+        id: min_dep_gen_spark
+        uses: alteryx/minimum-dependency-generator@v3
+        with:
+          paths: 'pyproject.toml'
+          options: 'dependencies'
+          extras_require: 'spark'
+          output_filepath: premium_primitives/tests/requirement_files/minimum_spark_requirements.txt
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.REPO_SCOPED_TOKEN }}
+          commit-message: Update minimum dependencies
+          title: Automated Minimum Dependency Updates
+          author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+          body: "This is an auto-generated PR with **minimum** dependency updates.
+                 Please do not delete the `min-dep-update` branch because it's needed by the auto-dependency bot."
+          branch: min-dep-update
+          branch-suffix: short-commit-hash
+          base: main
+          assignees: machineFL
+          reviewers: machineAYX
