@@ -44,6 +44,7 @@ jobs:
         run: echo "coverage_args=--cov=premium_primitives --cov-config=../pyproject.toml --cov-report=xml:../coverage.xml" >> $GITHUB_ENV
       - name: Run unit tests
         run: |
+          cd unpacked_sdist
           python -m pytest -n auto -s -vv ${{ env.coverage_args }}
       - if: ${{ matrix.python_version == 3.8 && matrix.featuretools_version == 'release'}}
         name: Upload coverage to Codecov
