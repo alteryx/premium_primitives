@@ -30,14 +30,6 @@ jobs:
           paths: 'pyproject.toml'
           options: 'dependencies'
           output_filepath: premium_primitives/tests/requirement_files/minimum_core_requirements.txt
-      - name: Run min dep generator - spark
-        id: min_dep_gen_spark
-        uses: alteryx/minimum-dependency-generator@v3
-        with:
-          paths: 'pyproject.toml'
-          options: 'dependencies'
-          extras_require: 'spark'
-          output_filepath: premium_primitives/tests/requirement_files/minimum_spark_requirements.txt
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
