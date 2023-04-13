@@ -14,7 +14,7 @@ jobs:
           gh auth status
           gh pr list --repo "${{ github.repository }}" --assignee "machineFL" --base main --state open --search "status:success review:required" --limit 1 --json number > dep_PRs_waiting_approval.json
           dep_pull_request=$(cat dep_PRs_waiting_approval.json | grep -Eo "[0-9]*")
-          echo ::set-output name=dep_pull_request::${dep_pull_request}
+          echo "{dep_pull_request}=$dep_pull_request" >> $GITHUB_OUTPUT
         env:
           GITHUB_TOKEN: ${{ secrets.AUTO_APPROVE_TOKEN }}
       - name: Approve dependency PRs and enable auto-merge
