@@ -19,9 +19,6 @@ from premium_primitives.phone_number_to_area import PhoneNumberToArea  # noqa: F
 from premium_primitives.phone_number_to_country import (  # noqa: F401
     PhoneNumberToCountry,
 )
-from premium_primitives.postalcode_to_household_income import (  # noqa: F401
-    PostalCodeToHouseholdIncome,
-)
 from premium_primitives.postalcode_to_latlong import PostalCodeToLatLong  # noqa: F401
 from premium_primitives.postalcode_to_per_capita_income import (  # noqa: F401
     PostalCodeToPerCapitaIncome,
