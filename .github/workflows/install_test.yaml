@@ -45,10 +45,11 @@ jobs:
       - name: Check featuretools and premium_primitives pkgs importable
         run: |
           python -c "import premium_primitives; print(premium_primitives.__version__)"
-          python -c "from premium_primitives import PostalCodeToHouseholdIncome"
+          python -c "from premium_primitives import PostalCodeToState"
+          python -c "from premium_primitives import CountryCodeToPopulation"
           python -c "import featuretools; print(featuretools.__version__)"
-          python -c "from featuretools.primitives import PostalCodeToHouseholdIncome"
-          python -c "from featuretools.primitives import PostalCodeToLatLong"
+          python -c "from featuretools.primitives import PostalCodeToState"
+          python -c "from featuretools.primitives import CountryCodeToPopulation"
           python -c "from featuretools.primitives import LatLongToCity"
           python -c "from featuretools.primitives import list_primitives; assert len(list_primitives()) > 180"
       - name: Check extra requires
