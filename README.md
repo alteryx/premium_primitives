@@ -15,7 +15,7 @@
 
 Premium Primitives is a package to use with [Featuretools](https://github.com/alteryx/featuretools) that provides additional primitives for feature generation.
 ```bash
-python -m pip install featuretools[primitives]
+python -m pip install featuretools[premium]
 ```
 
 ## Support
