@@ -1,5 +1,6 @@
 exclude: |
   (?x)
+  ^premium_primitives/data/nltk-data/|
   .html$|.csv$|.svg$|.md$|.txt$|.json$|.xml$|.pickle$|^.github/|
   (LICENSE.*|README.*)
 repos:

@@ -32,6 +32,8 @@ dependencies = [
     "pandas >= 1.5.0, <2.0.0",
     "featuretools >= 1.5.0, <2.0.0",
     "woodwork >= 0.8.1",
+    "nltk >= 3.4.5",
+    "scikit-learn >= 0.20.0",
     "phone-iso3166 >= 0.3",
     "phonenumbers >= 8.10.6",
     "reverse_geocoder >= 1.5.1",
@@ -49,6 +51,13 @@ dev = [
     "ruff >= 0.0.239",
     "black[jupyter] >= 23.1.0",
     "pre-commit >= 2.20.0",
+    "premium_primitives[test]"
+]
+complete = [
+    "tensorflow >= 1.14.0; sys_platform!='darwin' or platform_machine!='arm64'",
+    "tensorflow-metal >= 0.4.0; sys_platform=='darwin' and platform_machine=='arm64'",
+    "tensorflow-macos >= 2.8.0; sys_platform=='darwin' and platform_machine=='arm64'",
+    "tensorflow_hub >= 0.4.0",
 ]
 
 [project.urls]
@@ -76,6 +85,7 @@ namespaces = true
 "premium_primitives.data" = [
     "*.csv",
     "*.txt",
+    "nltk-data/**/*",
 ]
 
 [tool.setuptools.exclude-package-data]
