@@ -28,9 +28,9 @@ class TestCountryCodeToIncome(BaseTestTransform):
 
     def test_country_code_to_income_empty_input(self):
         primitive_func = self.primitive().get_function()
-        array = pd.Series([])
+        array = pd.Series([], dtype="string")
         answer = pd.Series(primitive_func(array))
-        correct_answer = pd.Series([])
+        correct_answer = pd.Series([], dtype="float64")
         pd.testing.assert_series_equal(answer, correct_answer)
 
     def test_country_code_to_income_nan(self):
