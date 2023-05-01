@@ -73,6 +73,10 @@ license-files = ["LICENSE"]
 namespaces = true
 
 [tool.setuptools.package-data]
+"*" = [
+    "*.csv",
+    "*.txt",
+]
 "premium_primitives" = [
     "README.md",
     "data/nltk-data/**/*",

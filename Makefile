@@ -6,6 +6,10 @@ clean:
 	find . -name '.coverage.*' -delete
 	find . -name __pycache__ -delete
 	find . -type d -name ".pytest_cache" -exec rm -r {} +
+	rm -rf ./build
+	rm -rf ./dist
+	rm -rf ./premium_primitives.egg-info
+	rm -rf ./unpacked_sdist
 
 .PHONY: lint
 lint:
