@@ -75,11 +75,9 @@ namespaces = true
 [tool.setuptools.package-data]
 "premium_primitives" = [
     "README.md",
-]
-"premium_primitives.data" = [
-    "*.csv",
-    "*.txt",
-    "nltk-data/**/*",
+    "data/nltk-data/**/*",
+    "data/*.csv",
+    "data/*.txt",
 ]
 
 [tool.setuptools.exclude-package-data]
