@@ -30,7 +30,7 @@ jobs:
       - name: Install premium primitives via sdist
         run: |
           cd unpacked_sdist
-          python -m pip install ".[complete,test]"
+          python -m pip install ".[test]"
       - if: ${{ matrix.featuretools_version == 'main' }}
         name: Install Featuretools from main
         run: |

@@ -46,9 +46,6 @@ from premium_primitives.sub_region_code_to_region import (
 )
 from premium_primitives.version import __version__
 
-if find_spec("tensorflow") and find_spec("tensorflow_hub"):
-    from premium_primitives.tensorflow import Elmo, UniversalSentenceEncoder
-
 PREMIUM_PRIMITIVES = [
     obj
     for obj in globals().values()
