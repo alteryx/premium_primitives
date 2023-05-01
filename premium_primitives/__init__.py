@@ -59,7 +59,7 @@ PREMIUM_PRIMITIVES = [
 
 nltk_data_path = pkg_resources.resource_filename(
     "premium_primitives",
-    "data/nltk-data/",
+    "data/nltk_data/",
 )
 nltk.data.path.insert(0, nltk_data_path)
 

@@ -79,7 +79,7 @@ namespaces = true
 ]
 "premium_primitives" = [
     "README.md",
-    "data/nltk-data/**/*",
+    "data/nltk_data/**/*",
     "data/*.csv",
     "data/*.txt",
 ]
