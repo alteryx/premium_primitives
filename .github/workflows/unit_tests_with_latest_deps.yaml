@@ -26,6 +26,7 @@ jobs:
           python-version: ${{ matrix.python_version }}
       - name: Build premium primitives package (whl, tar.gz)
         run: |
+          make clean
           make package
       - name: Install premium primitives via sdist
         run: |
