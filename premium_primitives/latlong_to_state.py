@@ -57,9 +57,9 @@ class LatLongToState(TransformPrimitive):
 
             latlong_df = pd.DataFrame({"latlongs": column})
             latlong_df["is_null"] = latlong_df.apply(
-                lambda row: True
-                if any(map(lambda x: pd.isna(x), row["latlongs"]))
-                else False,
+                lambda row: (
+                    True if any(map(lambda x: pd.isna(x), row["latlongs"])) else False
+                ),
                 axis=1,
             )
             latlongs = latlong_df.apply(
