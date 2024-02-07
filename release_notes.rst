@@ -3,6 +3,10 @@
 Release Notes
 -------------
 
+Future Release
+==============
+    * Remove pandas verion upper bound restriction (:pr:`16`)
+
 v0.0.2 May 9, 2023
 ==================
     * Add primitives from nlp-primitives add on (:pr:`7`)
