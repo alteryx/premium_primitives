@@ -3,8 +3,8 @@
 Release Notes
 -------------
 
-Future Release
-==============
+v0.0.3 Feb 7, 2024
+==================
     * Remove pandas version upper bound restriction and add Python 3.11 tests (:pr:`16`)
 
 v0.0.2 May 9, 2023
