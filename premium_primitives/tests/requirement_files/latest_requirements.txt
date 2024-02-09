@@ -2,5 +2,5 @@ featuretools==1.28.0
 numpy==1.26.4
 pandas==2.2.0
 phone-iso3166==0.4.1
-phonenumbers==8.13.29
+phonenumbers==8.13.30
 zipcodes==1.2.0
