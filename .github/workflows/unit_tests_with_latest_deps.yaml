@@ -47,7 +47,7 @@ jobs:
         run: |
           cd unpacked_sdist
           python -m pytest -n auto -s -vv premium_primitives/ ${{ env.coverage_args }}
-      - if: ${{ matrix.python_version == 3.9 && matrix.featuretools_version == 'release'}}
+      - if: ${{ matrix.python_version == 3.9 && matrix.featuretools_version == 'main'}}
         name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         with:
