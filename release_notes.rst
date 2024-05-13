@@ -10,7 +10,7 @@ Future Release
     * Changes
     * Documentation Changes
     * Testing Changes
-        * * Update release notes updated check CI action (:pr:`284`)
+        * * Update release notes updated check CI action (:pr:`33`)
 
 v0.0.3 Mar 19, 2024
 ===================
