@@ -3,15 +3,14 @@
 Release Notes
 -------------
 
-.. Future Release
-  ==============
+Future Release
+==============
     * Enhancements
     * Fixes
     * Changes
     * Documentation Changes
     * Testing Changes
-
-.. Thanks to the following people for contributing to this release:
+        * * Update release notes updated check CI action (:pr:`284`)
 
 v0.0.3 Mar 19, 2024
 ===================
