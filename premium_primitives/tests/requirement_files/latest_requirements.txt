@@ -1,6 +1,6 @@
 featuretools==1.30.0
 numpy==1.26.4
-pandas==2.2.1
+pandas==2.2.2
 phone-iso3166==0.4.1
-phonenumbers==8.13.33
+phonenumbers==8.13.36
 zipcodes==1.2.0
