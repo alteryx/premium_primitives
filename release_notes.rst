@@ -18,7 +18,7 @@ v0.1.0 May 14, 2024
     * Enhancements
         * Add support for Python 3.12 (:pr:`34`)
     * Testing Changes
-        * * Update release notes updated check CI action (:pr:`33`)
+        * Update release notes updated check CI action (:pr:`33`)
 
     Thanks to the following people for contributing to this release:
     :user:`thehomebrewnerd`
