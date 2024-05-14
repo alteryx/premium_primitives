@@ -6,6 +6,7 @@ Release Notes
 Future Release
 ==============
     * Enhancements
+        * Add support for Python 3.12 (:pr:``)
     * Fixes
     * Changes
     * Documentation Changes
