@@ -8,7 +8,7 @@ Future Release
     * Enhancements
     * Fixes
     * Changes
-        * Restrict numpy to <2.0.0 (:pr:``)
+        * Restrict numpy to <2.0.0 (:pr:`41`)
     * Documentation Changes
     * Testing Changes
 
